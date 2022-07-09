@@ -5,3 +5,10 @@ string s_a = Console.ReadLine();
 
 int a = int.Parse(s_a);
 Console.WriteLine(a * a);
+
+
+// Сокрашаем написания 
+// Console.WriteLine("Write on number: ");
+
+// int a = int.Parse(Console.ReadLine());
+// Console.WriteLine(a * a);
