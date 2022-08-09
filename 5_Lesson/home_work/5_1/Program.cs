@@ -2,47 +2,36 @@
 //Напишите программу, которая покажет количество чётных чисел в массиве.
 //[345, 897, 568, 234] -> 2
 
-int[] CreateArray()
+void Print(int[] arr)
 {
-    Console.WriteLine("Input number of elements");
-    int num = int.Parse(Console.ReadLine());
-    // Console.WriteLine("Input elemet's min");
-    // int min = int.Parse(Console.ReadLine());
-    // Console.WriteLine("Input elemet's max");
-    // int max = int.Parse(Console.ReadLine());
-    int min = 100;
-    int max = 999;
-    int[] array = new int[num];
-    for(int i=0; i < num; i++)
+    int size = arr.Length;
+    for (int i = 0; i < size; i++)
     {
-        array[i]=new Random().Next(min, max+1);
-        Console.Write($"{array[i]} ");
+        Console.Write($"{arr[i]} ");
     }
     Console.WriteLine();
-    return(array);
 }
-void ArrayElementRemCounter(int[] array1)
+int[] MassNums (int size, int from, int to)
 {
-    int rem=2;
-    while(rem<0||rem>1)
+    int[] arr = new int[size];
+    for (int i = 0; i < size; i++)
     {
-        Console.WriteLine("Input %2 element's value need to count (0 or 1)");
-        rem = int.Parse(Console.ReadLine());
+        arr[i] = new Random().Next(from, to);
     }
-    int a=0;
-    int Sum=0;
-    for(int i=0; i < array1.Length; i++)
+    return arr;
+} 
+int EvenNum(int[] arr)
+{
+    int count = 0;
+    for (int i = 0; i < arr.Length; i++)
     {
-        
-        if(array1[i]%2==rem)
+        if (arr[i] % 2 == 0)
         {
-            a+=1;
-            Sum+=array1[i];
-        }         
+            count += 1;
+        }
     }
-    if (a==0)
-        Console.WriteLine("This values isn't found in array");
-    else
-        Console.WriteLine($"This values is found in array {a} times, Sum of these elements is {Sum}");
+    return count;
 }
-ArrayElementRemCounter(CreateArray());
+int[] arr_1 = MassNums(15, 100, 251);
+Print(arr_1);
+Console.WriteLine(EvenNum(arr_1));
