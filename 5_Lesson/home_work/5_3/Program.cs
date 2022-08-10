@@ -15,7 +15,7 @@ double[] MassNums(int size)
     Random n_new = new Random();
     for (int i = 1; i < size; i++)
     {
-        arr[i] = Math.Round(n_new.NextDouble() * (10+12) - 10, 2);
+        arr[i] = Math.Round(n_new.NextDouble() * (10 + 12) - 10, 2);
     }
     return arr;
 }
@@ -23,7 +23,7 @@ void DiffMaxMin(double[] arr)
 {
     double n_max = arr[0];
     double n_min = arr[0];
-    for(int i = 1; i < arr.Length; i++)
+    for (int i = 1; i < arr.Length; i++)
     {
         if (n_max < arr[i])
         {
